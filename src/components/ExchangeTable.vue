@@ -31,8 +31,9 @@ export default {
   },
   async created() {
     const today = new Date()
-    const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, '') // YYYYMMDD format
-    const response = await fetchExchangeRates(formattedDate, formattedDate, {
+    const formattedDate = today.toISOString().slice(0, 10).replace(/-/g, '') // Mai dátum (nem működik mert nincs mindig adat a mai napra)
+    console.log(formattedDate)
+    const response = await fetchExchangeRates('20240529', '20240529', {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin': '*'

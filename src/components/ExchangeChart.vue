@@ -1,40 +1,42 @@
 <template>
-  <div class="exchange-chart">
-    <h2>{{ selectedCurrency }} Árfolyamai</h2>
-    <Bar id="my-chart-id" :options="chartOptions" :data="chartData" v-if="chartData" />
-    <div v-else>
-      <p>Válaszd ki a pénznemet és a dátumot.</p>
-    </div>
+  <div class="container">
+    <div class="exchange-chart">
+      <h2>{{ selectedCurrency }} Árfolyamai</h2>
+      <Bar id="my-chart-id" :options="chartOptions" :data="chartData" v-if="chartData" />
+      <div v-else>
+        <p>Válaszd ki a pénznemet és a dátumot.</p>
+      </div>
 
-    <div class="form-group">
-      <label for="currencySelect">Pénznem választás:</label>
-      <select v-model="selectedCurrency" id="currencySelect" class="form-control">
-        <option v-for="currency in currencies" :key="currency" :value="currency">
-          {{ currency }}
-        </option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="currencySelect">Pénznem választás:</label>
+        <select v-model="selectedCurrency" id="currencySelect" class="form-control">
+          <option v-for="currency in currencies" :key="currency" :value="currency">
+            {{ currency }}
+          </option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="fromDate">Dátumtól:</label>
-      <input
-        type="date"
-        id="fromDate"
-        v-model="fromDate"
-        @change="fetchCurrencyData(selectedCurrency)"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <label for="fromDate">Dátumtól:</label>
+        <input
+          type="date"
+          id="fromDate"
+          v-model="fromDate"
+          @change="fetchCurrencyData(selectedCurrency)"
+          class="form-control"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="toDate">Dátumig:</label>
-      <input
-        type="date"
-        id="toDate"
-        v-model="toDate"
-        @change="fetchCurrencyData(selectedCurrency)"
-        class="form-control"
-      />
+      <div class="form-group">
+        <label for="toDate">Dátumig:</label>
+        <input
+          type="date"
+          id="toDate"
+          v-model="toDate"
+          @change="fetchCurrencyData(selectedCurrency)"
+          class="form-control"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -132,12 +134,25 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
 .exchange-chart {
   margin: 20px;
   font-family: 'Arial', sans-serif;
 }
 
 .form-group {
+  width: 100%;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -145,7 +160,6 @@ export default defineComponent({
 }
 
 .form-control {
-  width: 35%;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -159,6 +173,7 @@ export default defineComponent({
 }
 
 h2 {
+  text-align: center;
   font-size: 24px;
   margin-bottom: 15px;
 }

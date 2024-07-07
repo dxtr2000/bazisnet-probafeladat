@@ -18,6 +18,7 @@ nav {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .nav-link {
