@@ -111,7 +111,8 @@ export default defineComponent({
           datasets: [
             {
               label: `${currency} Árfolyam`,
-              backgroundColor: '#f87979',
+              backgroundColor: '#4CAF50',
+              borderColor: '#388E3C',
               data: data.map((entry) => entry.buyRate)
             }
           ]
@@ -141,14 +142,14 @@ export default defineComponent({
   gap: 20px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f9f9f9, #e9ecef);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
 }
+
 .exchange-chart {
   margin: 20px;
-  font-family: 'Arial', sans-serif;
 }
 
 .form-group {
@@ -156,30 +157,36 @@ export default defineComponent({
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .form-control {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #fff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #66afe9;
-  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
 
 h2 {
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: 16px;
-  color: #777;
+  font-size: 18px;
+  color: #666;
+  text-align: center;
 }
 </style>

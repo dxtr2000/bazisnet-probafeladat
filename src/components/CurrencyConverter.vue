@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="currency-converter">
     <h2>Valuta Váltó</h2>
 
     <div class="currency-selector">
@@ -89,24 +89,42 @@ export default {
 </script>
 
 <style scoped>
+.currency-converter {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
 .currency-selector {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   margin-bottom: 20px;
 }
 
 .currency-select {
-  padding: 8px;
+  width: 100%;
+  padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #f2f2f2;
+  border: 1px solid #ced4da;
+  background-color: #ffffff;
   transition: border-color 0.3s ease;
 }
 
 .currency-select:focus {
   outline: none;
-  border-color: #66afe9;
+  border-color: #007bff;
 }
 
 .amount-input {
@@ -116,24 +134,27 @@ export default {
 .amount-input label {
   display: block;
   margin-bottom: 5px;
+  color: #495057;
 }
 
 .amount-input input {
-  padding: 8px;
+  width: 95%;
+  padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #ced4da;
   transition: border-color 0.3s ease;
 }
 
 .amount-input input:focus {
   outline: none;
-  border-color: #66afe9;
+  border-color: #007bff;
 }
 
 .result {
   margin-top: 20px;
   font-size: 20px;
-  color: #1a1a1a;
+  color: #343a40;
+  text-align: center;
 }
 </style>
